@@ -18,7 +18,7 @@ class NonChiestoHBot(commands.Bot):
 
     async def on_command_error(self, ctx: commands.Context, error):
         if isinstance(error, (commands.errors.CheckFailure, commands.errors.CommandNotFound)):
-            await ctx.send(embed=EmbedsList.NONCHIESTO, reference=ctx.message)
+            await ctx.send(embed=EmbedsList.NONCHIESTO.value, reference=ctx.message)
             pass
         else:
             raise error
