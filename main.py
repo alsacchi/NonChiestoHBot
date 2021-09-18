@@ -35,7 +35,7 @@ class NonChiestoHBot(commands.Bot):
 if __name__ == "__main__":
     client = NonChiestoHBot(command_prefix="!", case_insensitive=True)
     client.load()
-    client.run('***REMOVED***')
+    client.run('---')
 
 
     
