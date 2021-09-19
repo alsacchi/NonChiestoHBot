@@ -7,13 +7,15 @@ class Admin(commands.Cog):
         self.bot = bot
         Permission().init()
 
-    @commands.command()
+    @commands.command(help="Ricarica tutti i Cogs",
+                        brief="Ricarica tutti i Cogs")
     @commands.check(Permission().isBotOwner)
     async def reload(self, ctx: commands.Context):
         await self.bot.reload()
         await ctx.send("Reload completato!", reference=ctx.message)
 
-    @commands.command()
+    @commands.command(help="Diventa l'owner del bot così da permetterti di ricaricare i Cogs",
+                        brief="Diventa il dio del bot")
     @commands.check(Permission().whitelistEmpty)
     async def amOwner(self, ctx: commands.Context):
         Permission.whitelist[ctx.guild.id] = ctx.author.id
